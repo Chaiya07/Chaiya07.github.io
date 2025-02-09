@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>อัปโหลดนิยาย</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>เพิ่มนิยายใหม่</h2>
+  <form id="uploadForm">
+    <div>
+      <label for="img">เลือกรูปภาพ:</label>
+      <input type="file" id="img" name="img" accept="image/*" required />
+    </div>
+    <div>
+      <label for="title">ชื่อนิยาย:</label>
+      <input type="text" id="title" name="title" placeholder="ชื่อนิยาย" required />
+    </div>
+    <div>
+      <label for="link">ลิงก์ไปหน้าอ่านนิยาย:</label>
+      <input type="text" id="link" name="link" placeholder="novel1.html" required />
+    </div>
+    <button type="submit">อัปโหลด</button>
+  </form>
+
+  <script>
+    // ฟอร์มอัปโหลดนิยาย
+    document.getElementById("uploadForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      
+      const fileInput = document.getElementById("img");
+      const title = document.getElementById("title").value.trim();
+      const link = document.getElementById("link").value.trim();
+      
+      // ตรวจสอบว่าได้เลือกไฟล์หรือไม่
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("กรุณาเลือกรูปภาพ");
+        return;
+      }
+      
+      // แปลงไฟล์เป็น Data URL ด้วย FileReader
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imgData = e.target.result; // Data URL ของรูปภาพ
+        
+        let novels = JSON.parse(localStorage.getItem("novels")) || [];
+        novels.push({ img: imgData, title: title, link: link });
+        localStorage.setItem("novels", JSON.stringify(novels));
+        
+        alert("เพิ่มนิยายสำเร็จ!");
+        window.location.href = "index.html";
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
