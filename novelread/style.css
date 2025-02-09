@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header & Navbar */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #fff;
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  padding: 0 20px;
+  position: relative;
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+  color: rgb(26, 121, 70);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Search Bar */
+#search-bar {
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#search-bar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Banner */
+#banner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#banner img {
+  width: 80%;
+  height: auto;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.banner-text:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Categories */
+#categories {
+  text-align: center;
+  padding: 20px;
+}
+
+.categories-list {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  font-size: 30px;
+}
+
+/* Novel List */
+.novel-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.novel {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.4s ease-in-out;
+  position: relative;
+}
+
+.novel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 10, 0.3);
+}
+
+.novel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Bottom Navigation */
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+
+#bottom-nav a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#bottom-nav a:hover {
+  color: #1de723;
+}
+
+/* Play Button */
+#playButton {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: greenyellow;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#playButton:hover {
+  background: cyan;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #header {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+  
+  /* ลดความกว้างของ Search Bar */
+  #search-bar {
+    width: 200px;
+  }
+  
+  /* ซ่อน Navbar และแสดงแบบ Column */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .navbar.active {
+    display: flex;
+  }
+  
+  .navbar li {
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  /* แสดง Hamburger Menu */
+  .hamburger {
+    display: block;
+  }
+}

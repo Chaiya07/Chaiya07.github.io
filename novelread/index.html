@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaiya Reader</title>
+  <!-- โหลด Font Awesome และไฟล์ CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="header">
+    <a href="index.html">
+      <img src="logo.png" class="logo" alt="Chaiya Reader Logo" />
+    </a>
+    
+    <!-- Hamburger สำหรับ Mobile -->
+    <div id="hamburger" class="hamburger">
+      <i class="fa fa-bars"></i>
+    </div>
+    
+    <nav>
+      <ul id="navbar" class="navbar">
+        <li><a class="active" href="index.html">หน้าแรก</a></li>
+        <li><a href="about.html">เกี่ยวกับ</a></li>
+        <li><a href="services.html">ช่วยเหลือ</a></li>
+        <li><a href="contact.html">ติดต่อ</a></li>
+      </ul>
+    </nav>
+    
+    <input type="text" id="search-bar" placeholder="ค้นหา" />
+  </header>
+  </section>
+
+  <section id="banner">
+    <img src="3.png" alt="Banner" />
+    <div class="banner-text">
+      <h1>ยินดีต้อนรับสู่ Chaiya Reader</h1>
+      <p>เพลิดเพลินกับนิยายที่ดีที่สุด</p>
+    </div>
+  </section>
+
+  <section id="categories">
+    <h2>หมวดหมู่นิยาย</h2>
+    <div class="categories-list">
+      <div class="categories">แฟนตาซี</div>
+      <div class="categories">โรแมนติก</div>
+      <div class="categories">สืบสวน</div>
+    </div>
+  </section>
+
+  <section id="novel-list">
+    <h2>นิยายแนะนำ</h2>
+    <div id="novel-container" class="novel-container">
+      <!-- รายการนิยายจะถูกเติมโดย script.js -->
+    </div>
+  </section>
+  
+  <div id="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <i class="fa-solid fa-house"></i>
+      <span class="tooltip">หน้าแรก</span>
+    </a>
+    <a href="login.html" class="nav-item">
+      <i class="fa-solid fa-right-to-bracket"></i>
+      <span class="tooltip">ล็อคอิน</span>
+    </a>
+    <a href="upload.html" class="nav-item">
+      <i class="fa-solid fa-upload"></i>
+      <span class="tooltip">อัปโหลด</span>
+    </a>
+  </div>
+
+  <button id="playButton">เปิดเพลง</button>
+  <audio id="audio" src="music.mp3"></audio>
+
+  <!-- เรียกใช้งานไฟล์ JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Toggle Hamburger Menu
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('navbar').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
